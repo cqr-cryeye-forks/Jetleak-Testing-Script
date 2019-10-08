@@ -1,4 +1,4 @@
-import httplib, urllib, ssl, string, sys, getopt
+import http.client, urllib, ssl, string, sys, getopt
 from urlparse import urlparse
 
 '''
@@ -25,9 +25,9 @@ port = sys.argv[2]
 conn = None
 
 if url.scheme == "https":
-    conn = httplib.HTTPSConnection(url.netloc + ":" + port, context=ssl._create_unverified_context())
+    conn = http.client.HTTPSConnection(url.netloc + ":" + port, context=ssl._create_unverified_context())
 elif url.scheme == "http":
-    conn = httplib.HTTPConnection(url.netloc + ":" + port)
+    conn = http.client.HTTPConnection(url.netloc + ":" + port)
 else:
     print("Error: Only 'http' or 'https' URL Schemes Supported")
     sys.exit(1)
