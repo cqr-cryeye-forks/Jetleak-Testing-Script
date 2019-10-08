@@ -36,8 +36,8 @@ x = "\x00"
 headers = {"Referer": x}
 conn.request("POST", "/", "", headers)
 r1 = conn.getresponse()
-print "\n"
-print r1.reason
+print("\n")
+print(r1.reason)
 
 if (r1.status == 400 and ("Illegal character 0x0 in state" in r1.reason)):
     print("\r\nThis version of Jetty is VULNERABLE to JetLeak!")
