@@ -1,5 +1,5 @@
 import http.client, urllib, ssl, string, sys, getopt
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 '''
 
